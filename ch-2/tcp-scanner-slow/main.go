@@ -6,11 +6,13 @@ import (
 )
 
 func main() {
+	//端口扫描1-1024
 	for i := 1; i <= 1024; i++ {
 		address := fmt.Sprintf("scanme.nmap.org:%d", i)
+		//等待响应耗时长
 		conn, err := net.Dial("tcp", address)
 		if err != nil {
-			// port is closed or filtered.
+			fmt.Printf("%d closed\n", i)
 			continue
 		}
 		conn.Close()
