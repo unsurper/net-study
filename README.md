@@ -1,2 +1,2 @@
-# bhg
-Code samples for the No Starch Press Black Hat Go
+# go-net
+记录一些go网络的学习资料
