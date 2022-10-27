@@ -37,9 +37,11 @@ func (fooWriter *ReadWriter) Write(b []byte) (int, error) {
 }
 func main() {
 	// Instantiate reader and writer.
-	var Create CreateRW
-	reader := Create.Create()
-	writer := Create.Create()
+	var create CreateReadWriter
+	create = &CreateRW{}
+
+	reader := create.Create()
+	writer := create.Create()
 	if _, err := io.Copy(writer, reader); err != nil {
 		log.Fatalln("Unable to read/write data")
 	}
